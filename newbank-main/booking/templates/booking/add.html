@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Booking</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'booking/styles.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1>Book a visit</h1>
+            <form method="post">
+                
+                <label for="reason">Reason:</label><br>
+                <input type="text" name="reason" placeholder="Reason"><br><br>
+
+                <label for="date">Date and Time:</label><br>
+                <input type="date" name="date" placeholder="Date">
+                <input type="time" name="time" placeholder="Time"><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <br><br>
+            <a href="{% url 'booking:index' %}">&lt;&lt; All Bookings</a>
+        </div>
+    </body>
+</html>

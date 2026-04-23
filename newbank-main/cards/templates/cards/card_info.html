@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Card Information</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+    </head>
+    <body>
+        <h1>{{ card_name }}</h1>
+        <p>{{ card_name }} is a bank card of NewBank.</p>
+        <a href="{% url 'cards:index' %}">&lt;&lt; All Cards</a>
+    </body>
+</html>

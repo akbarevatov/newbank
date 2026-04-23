@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NewBank</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'home/styles.css' %}">
+    </head>
+
+    <body>
+        <div>
+            <h1>Welcome to NewBank</h1>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:my_account' username=user.username %}">My account</a></li>
+                {% else %}
+                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                {% endif %}
+                <li><a href="{% url 'cards:index' %}">Plastic cards</a></li>
+                <li><a href="{% url 'currency:index' %}">Currency</a></li>
+                <li><a href="{% url 'booking:index' %}">Booking a visit</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
